@@ -25,29 +25,19 @@ export class RoleServiceBase {
     return this.prisma.role.count(args);
   }
 
-  async roles<T extends Prisma.RoleFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.RoleFindManyArgs>
-  ): Promise<PrismaRole[]> {
-    return this.prisma.role.findMany<Prisma.RoleFindManyArgs>(args);
+  async roles(args: Prisma.RoleFindManyArgs): Promise<PrismaRole[]> {
+    return this.prisma.role.findMany(args);
   }
-  async role<T extends Prisma.RoleFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.RoleFindUniqueArgs>
-  ): Promise<PrismaRole | null> {
+  async role(args: Prisma.RoleFindUniqueArgs): Promise<PrismaRole | null> {
     return this.prisma.role.findUnique(args);
   }
-  async createRole<T extends Prisma.RoleCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.RoleCreateArgs>
-  ): Promise<PrismaRole> {
-    return this.prisma.role.create<T>(args);
+  async createRole(args: Prisma.RoleCreateArgs): Promise<PrismaRole> {
+    return this.prisma.role.create(args);
   }
-  async updateRole<T extends Prisma.RoleUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.RoleUpdateArgs>
-  ): Promise<PrismaRole> {
-    return this.prisma.role.update<T>(args);
+  async updateRole(args: Prisma.RoleUpdateArgs): Promise<PrismaRole> {
+    return this.prisma.role.update(args);
   }
-  async deleteRole<T extends Prisma.RoleDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.RoleDeleteArgs>
-  ): Promise<PrismaRole> {
+  async deleteRole(args: Prisma.RoleDeleteArgs): Promise<PrismaRole> {
     return this.prisma.role.delete(args);
   }
 

@@ -29,28 +29,28 @@ export class CustomerServiceBase {
     return this.prisma.customer.count(args);
   }
 
-  async customers<T extends Prisma.CustomerFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.CustomerFindManyArgs>
+  async customers(
+    args: Prisma.CustomerFindManyArgs
   ): Promise<PrismaCustomer[]> {
-    return this.prisma.customer.findMany<Prisma.CustomerFindManyArgs>(args);
+    return this.prisma.customer.findMany(args);
   }
-  async customer<T extends Prisma.CustomerFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.CustomerFindUniqueArgs>
+  async customer(
+    args: Prisma.CustomerFindUniqueArgs
   ): Promise<PrismaCustomer | null> {
     return this.prisma.customer.findUnique(args);
   }
-  async createCustomer<T extends Prisma.CustomerCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.CustomerCreateArgs>
+  async createCustomer(
+    args: Prisma.CustomerCreateArgs
   ): Promise<PrismaCustomer> {
-    return this.prisma.customer.create<T>(args);
+    return this.prisma.customer.create(args);
   }
-  async updateCustomer<T extends Prisma.CustomerUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.CustomerUpdateArgs>
+  async updateCustomer(
+    args: Prisma.CustomerUpdateArgs
   ): Promise<PrismaCustomer> {
-    return this.prisma.customer.update<T>(args);
+    return this.prisma.customer.update(args);
   }
-  async deleteCustomer<T extends Prisma.CustomerDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.CustomerDeleteArgs>
+  async deleteCustomer(
+    args: Prisma.CustomerDeleteArgs
   ): Promise<PrismaCustomer> {
     return this.prisma.customer.delete(args);
   }

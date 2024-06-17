@@ -25,30 +25,28 @@ export class ProcurementServiceBase {
     return this.prisma.procurement.count(args);
   }
 
-  async procurements<T extends Prisma.ProcurementFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ProcurementFindManyArgs>
+  async procurements(
+    args: Prisma.ProcurementFindManyArgs
   ): Promise<PrismaProcurement[]> {
-    return this.prisma.procurement.findMany<Prisma.ProcurementFindManyArgs>(
-      args
-    );
+    return this.prisma.procurement.findMany(args);
   }
-  async procurement<T extends Prisma.ProcurementFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ProcurementFindUniqueArgs>
+  async procurement(
+    args: Prisma.ProcurementFindUniqueArgs
   ): Promise<PrismaProcurement | null> {
     return this.prisma.procurement.findUnique(args);
   }
-  async createProcurement<T extends Prisma.ProcurementCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ProcurementCreateArgs>
+  async createProcurement(
+    args: Prisma.ProcurementCreateArgs
   ): Promise<PrismaProcurement> {
-    return this.prisma.procurement.create<T>(args);
+    return this.prisma.procurement.create(args);
   }
-  async updateProcurement<T extends Prisma.ProcurementUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ProcurementUpdateArgs>
+  async updateProcurement(
+    args: Prisma.ProcurementUpdateArgs
   ): Promise<PrismaProcurement> {
-    return this.prisma.procurement.update<T>(args);
+    return this.prisma.procurement.update(args);
   }
-  async deleteProcurement<T extends Prisma.ProcurementDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ProcurementDeleteArgs>
+  async deleteProcurement(
+    args: Prisma.ProcurementDeleteArgs
   ): Promise<PrismaProcurement> {
     return this.prisma.procurement.delete(args);
   }

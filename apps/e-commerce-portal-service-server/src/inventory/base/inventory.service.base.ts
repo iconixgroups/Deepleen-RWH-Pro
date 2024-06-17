@@ -21,28 +21,28 @@ export class InventoryServiceBase {
     return this.prisma.inventory.count(args);
   }
 
-  async inventories<T extends Prisma.InventoryFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.InventoryFindManyArgs>
+  async inventories(
+    args: Prisma.InventoryFindManyArgs
   ): Promise<PrismaInventory[]> {
-    return this.prisma.inventory.findMany<Prisma.InventoryFindManyArgs>(args);
+    return this.prisma.inventory.findMany(args);
   }
-  async inventory<T extends Prisma.InventoryFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.InventoryFindUniqueArgs>
+  async inventory(
+    args: Prisma.InventoryFindUniqueArgs
   ): Promise<PrismaInventory | null> {
     return this.prisma.inventory.findUnique(args);
   }
-  async createInventory<T extends Prisma.InventoryCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.InventoryCreateArgs>
+  async createInventory(
+    args: Prisma.InventoryCreateArgs
   ): Promise<PrismaInventory> {
-    return this.prisma.inventory.create<T>(args);
+    return this.prisma.inventory.create(args);
   }
-  async updateInventory<T extends Prisma.InventoryUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.InventoryUpdateArgs>
+  async updateInventory(
+    args: Prisma.InventoryUpdateArgs
   ): Promise<PrismaInventory> {
-    return this.prisma.inventory.update<T>(args);
+    return this.prisma.inventory.update(args);
   }
-  async deleteInventory<T extends Prisma.InventoryDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.InventoryDeleteArgs>
+  async deleteInventory(
+    args: Prisma.InventoryDeleteArgs
   ): Promise<PrismaInventory> {
     return this.prisma.inventory.delete(args);
   }

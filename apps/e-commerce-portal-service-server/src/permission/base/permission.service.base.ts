@@ -25,28 +25,28 @@ export class PermissionServiceBase {
     return this.prisma.permission.count(args);
   }
 
-  async permissions<T extends Prisma.PermissionFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.PermissionFindManyArgs>
+  async permissions(
+    args: Prisma.PermissionFindManyArgs
   ): Promise<PrismaPermission[]> {
-    return this.prisma.permission.findMany<Prisma.PermissionFindManyArgs>(args);
+    return this.prisma.permission.findMany(args);
   }
-  async permission<T extends Prisma.PermissionFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.PermissionFindUniqueArgs>
+  async permission(
+    args: Prisma.PermissionFindUniqueArgs
   ): Promise<PrismaPermission | null> {
     return this.prisma.permission.findUnique(args);
   }
-  async createPermission<T extends Prisma.PermissionCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.PermissionCreateArgs>
+  async createPermission(
+    args: Prisma.PermissionCreateArgs
   ): Promise<PrismaPermission> {
-    return this.prisma.permission.create<T>(args);
+    return this.prisma.permission.create(args);
   }
-  async updatePermission<T extends Prisma.PermissionUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.PermissionUpdateArgs>
+  async updatePermission(
+    args: Prisma.PermissionUpdateArgs
   ): Promise<PrismaPermission> {
-    return this.prisma.permission.update<T>(args);
+    return this.prisma.permission.update(args);
   }
-  async deletePermission<T extends Prisma.PermissionDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.PermissionDeleteArgs>
+  async deletePermission(
+    args: Prisma.PermissionDeleteArgs
   ): Promise<PrismaPermission> {
     return this.prisma.permission.delete(args);
   }
