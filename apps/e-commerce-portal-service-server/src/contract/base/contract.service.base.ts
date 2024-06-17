@@ -23,28 +23,28 @@ export class ContractServiceBase {
     return this.prisma.contract.count(args);
   }
 
-  async contracts<T extends Prisma.ContractFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ContractFindManyArgs>
+  async contracts(
+    args: Prisma.ContractFindManyArgs
   ): Promise<PrismaContract[]> {
-    return this.prisma.contract.findMany<Prisma.ContractFindManyArgs>(args);
+    return this.prisma.contract.findMany(args);
   }
-  async contract<T extends Prisma.ContractFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ContractFindUniqueArgs>
+  async contract(
+    args: Prisma.ContractFindUniqueArgs
   ): Promise<PrismaContract | null> {
     return this.prisma.contract.findUnique(args);
   }
-  async createContract<T extends Prisma.ContractCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ContractCreateArgs>
+  async createContract(
+    args: Prisma.ContractCreateArgs
   ): Promise<PrismaContract> {
-    return this.prisma.contract.create<T>(args);
+    return this.prisma.contract.create(args);
   }
-  async updateContract<T extends Prisma.ContractUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ContractUpdateArgs>
+  async updateContract(
+    args: Prisma.ContractUpdateArgs
   ): Promise<PrismaContract> {
-    return this.prisma.contract.update<T>(args);
+    return this.prisma.contract.update(args);
   }
-  async deleteContract<T extends Prisma.ContractDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ContractDeleteArgs>
+  async deleteContract(
+    args: Prisma.ContractDeleteArgs
   ): Promise<PrismaContract> {
     return this.prisma.contract.delete(args);
   }

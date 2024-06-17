@@ -25,28 +25,28 @@ export class FeedbackServiceBase {
     return this.prisma.feedback.count(args);
   }
 
-  async feedbacks<T extends Prisma.FeedbackFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.FeedbackFindManyArgs>
+  async feedbacks(
+    args: Prisma.FeedbackFindManyArgs
   ): Promise<PrismaFeedback[]> {
-    return this.prisma.feedback.findMany<Prisma.FeedbackFindManyArgs>(args);
+    return this.prisma.feedback.findMany(args);
   }
-  async feedback<T extends Prisma.FeedbackFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.FeedbackFindUniqueArgs>
+  async feedback(
+    args: Prisma.FeedbackFindUniqueArgs
   ): Promise<PrismaFeedback | null> {
     return this.prisma.feedback.findUnique(args);
   }
-  async createFeedback<T extends Prisma.FeedbackCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.FeedbackCreateArgs>
+  async createFeedback(
+    args: Prisma.FeedbackCreateArgs
   ): Promise<PrismaFeedback> {
-    return this.prisma.feedback.create<T>(args);
+    return this.prisma.feedback.create(args);
   }
-  async updateFeedback<T extends Prisma.FeedbackUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.FeedbackUpdateArgs>
+  async updateFeedback(
+    args: Prisma.FeedbackUpdateArgs
   ): Promise<PrismaFeedback> {
-    return this.prisma.feedback.update<T>(args);
+    return this.prisma.feedback.update(args);
   }
-  async deleteFeedback<T extends Prisma.FeedbackDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.FeedbackDeleteArgs>
+  async deleteFeedback(
+    args: Prisma.FeedbackDeleteArgs
   ): Promise<PrismaFeedback> {
     return this.prisma.feedback.delete(args);
   }

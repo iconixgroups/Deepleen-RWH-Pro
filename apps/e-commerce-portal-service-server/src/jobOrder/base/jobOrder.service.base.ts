@@ -30,28 +30,28 @@ export class JobOrderServiceBase {
     return this.prisma.jobOrder.count(args);
   }
 
-  async jobOrders<T extends Prisma.JobOrderFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.JobOrderFindManyArgs>
+  async jobOrders(
+    args: Prisma.JobOrderFindManyArgs
   ): Promise<PrismaJobOrder[]> {
-    return this.prisma.jobOrder.findMany<Prisma.JobOrderFindManyArgs>(args);
+    return this.prisma.jobOrder.findMany(args);
   }
-  async jobOrder<T extends Prisma.JobOrderFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.JobOrderFindUniqueArgs>
+  async jobOrder(
+    args: Prisma.JobOrderFindUniqueArgs
   ): Promise<PrismaJobOrder | null> {
     return this.prisma.jobOrder.findUnique(args);
   }
-  async createJobOrder<T extends Prisma.JobOrderCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.JobOrderCreateArgs>
+  async createJobOrder(
+    args: Prisma.JobOrderCreateArgs
   ): Promise<PrismaJobOrder> {
-    return this.prisma.jobOrder.create<T>(args);
+    return this.prisma.jobOrder.create(args);
   }
-  async updateJobOrder<T extends Prisma.JobOrderUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.JobOrderUpdateArgs>
+  async updateJobOrder(
+    args: Prisma.JobOrderUpdateArgs
   ): Promise<PrismaJobOrder> {
-    return this.prisma.jobOrder.update<T>(args);
+    return this.prisma.jobOrder.update(args);
   }
-  async deleteJobOrder<T extends Prisma.JobOrderDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.JobOrderDeleteArgs>
+  async deleteJobOrder(
+    args: Prisma.JobOrderDeleteArgs
   ): Promise<PrismaJobOrder> {
     return this.prisma.jobOrder.delete(args);
   }
